@@ -8,25 +8,9 @@ document.querySelectorAll('#navbar a').forEach(anchor => {
 
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 70,
+                top: targetElement.offsetTop - 70, // Resta la altura del menú para que no cubra el título
                 behavior: 'smooth'
             });
         }
-    });
-});
-
-// Reproducción de video al pasar el cursor (Hover)
-document.querySelectorAll('.project-video').forEach(container => {
-    const iframe = container.querySelector('iframe');
-    const baseSrc = iframe.getAttribute('data-base-src');
-
-    container.addEventListener('mouseenter', () => {
-        // Al entrar el cursor, activamos autoplay silencioso
-        iframe.src = `${baseSrc}?autoplay=1&mute=1`;
-    });
-
-    container.addEventListener('mouseleave', () => {
-        // Al salir el cursor, restauramos la URL original para pausar
-        iframe.src = baseSrc;
     });
 });
